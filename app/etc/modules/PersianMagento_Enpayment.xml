@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<PersianMagento_Enpayment>
+			<active>true</active>
+			<codePool>community</codePool>
+		</PersianMagento_Enpayment>
+	</modules>
+</config>

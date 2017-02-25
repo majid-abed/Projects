@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magento
+*
+* NOTICE OF LICENSE
+*
+ * @category   PersianMagento
+ * @package    PersianMagento_Enpayment
+ * @copyright  Copyright (c) 2016-1395 Persian-Magento.ir
+ * @contacts   support@persian-magento.ir
+*/
+-->
+<config>
+    <modules>
+		<PersianMagento_Enpayment>
+			<version>1.0.0</version>
+		</PersianMagento_Enpayment>
+	</modules>
+
+    <global>
+        <models>
+            <enpayment>
+                <class>PersianMagento_Enpayment_Model</class>
+            </enpayment>
+        </models>
+		
+        <helpers>
+            <enpayment>
+                <class>PersianMagento_Enpayment_Helper</class>
+            </enpayment>
+        </helpers>
+		
+        <resources>
+            <enpayment_setup>
+                <setup>
+                    <module>PersianMagento_Enpayment</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </enpayment_setup>
+            <enpayment_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </enpayment_write>
+            <enpayment_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </enpayment_read>
+        </resources>
+        <blocks>
+            <enpayment>
+				<class>PersianMagento_Enpayment_Block</class>
+			</enpayment>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <enpayment>
+                <use>standard</use>
+                <args>
+                    <module>PersianMagento_Enpayment</module>
+                    <frontName>enpayment</frontName>
+                </args>
+            </enpayment>
+        </routers>
+        <translate>
+            <modules>
+                <PersianMagento_Enpayment>
+                    <files>
+                        <default>PersianMagento_Enpayment.csv</default>
+                    </files>
+                </PersianMagento_Enpayment>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <enpayment>
+                    <file>enpayment.xml</file>
+                </enpayment>
+            </updates>
+        </layout>
+    </frontend>
+	
+    <adminhtml>
+        <translate>
+            <modules>
+                <PersianMagento_Enpayment>
+                    <files>
+                        <default>PersianMagento_Enpayment.csv</default>
+                    </files>
+                </PersianMagento_Enpayment>
+            </modules>
+        </translate>
+    </adminhtml>
+	
+	<persianmagento>
+		<enpayment>
+			<verify_url>http://www.persian-magento.ir</verify_url>
+		</enpayment>
+	</persianmagento>
+	
+    <default>
+        <payment>        
+            <enpayment>
+                <active>0</active>
+                <model>enpayment/enpayment</model>
+                <order_status>1</order_status>
+                <title>EnBank Online Payment</title>
+                <allowspecific>0</allowspecific>
+                <use_store_currency>0</use_store_currency>
+            </enpayment>
+        </payment>
+    </default> 
+</config>

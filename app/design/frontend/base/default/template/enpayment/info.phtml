@@ -1,0 +1,19 @@
+<?php
+ /**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * @category   design_default
+ * @package    PersianMagento_Enpayment
+ * @copyright  Copyright (c) 1392-2013 Persian Magento . (http://www.persian-magento.ir)
+ */
+ 
+	echo $this->getMethod()->getTitle() . '<br/>';
+	
+	if ($this->getInfo()->getLastTransId() == '') {
+		echo '<em>' . $this->__('You will be redirected to En website when you place an order.') . '</em>';
+	} else {
+		echo $this->__('En Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
+	}
+?>

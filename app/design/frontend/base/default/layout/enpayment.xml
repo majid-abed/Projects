@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magento
+*
+* NOTICE OF LICENSE
+*
+* @category   design_default
+* @package    PersianMagento_Enpayment
+* @copyright  Copyright (c) 1392-2013 Persian Magento . (http://www.persian-magento.ir)
+*/ 
+-->
+<layout version="0.1.0">
+	<enpayment_processing_failure>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="enpayment/failure" name="enpayment_failure" template="enpayment/failure.phtml" />
+		</reference>
+	</enpayment_processing_failure>
+	
+	<enpayment_processing_redirect>
+		<reference name="root">
+			<action method="setTemplate"><template>enpayment/blank.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="enpayment/redirect" name="enpayment_redirect" template="enpayment/redirect.phtml" />
+		</reference>
+	</enpayment_processing_redirect>
+</layout>

@@ -1,0 +1,37 @@
+<?php
+ /**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * @category   design_default
+ * @package    PersianMagento_Enpayment
+ * @copyright  Copyright (c) 1392-2013 Persian Magento . (http://www.persian-magento.ir)
+ */
+?>
+
+<style type="text/css">
+.titr {
+	font-family: Tahoma;
+	font-size: 14px;
+}
+</style>
+<center>
+    <span class="titr"><b>در حال اتصال به درگاه پرداخت بانک اقتصاد نوین</b>
+    <br />لطفا منتظر بمانید
+	</span>
+</center>
+<form id="persianmagento_enpayment" action="<?php echo $this->getFormAction();?>" method="POST">
+<?php if (is_array($this->getFormData())): ?>
+    <?php foreach ($this->getFormData() as $name => $value): ?>
+        <input type="hidden" name="<?php echo $name; ?>" value="<?php echo $value; ?>"/>
+    <?php endforeach; ?>
+<?php endif; ?>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+    var paymentform = document.getElementById('persianmagento_enpayment');
+    window.onload = paymentform.submit();
+//]]>
+</script>

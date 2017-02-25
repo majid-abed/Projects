@@ -1,0 +1,16 @@
+<?php
+/**
+ * Magento
+ *
+ * @category   adminhtml_default_default
+ * @package    PersianMagento_Enpayment
+ * @copyright  Copyright (c) 2013-1392 Persian-Magento.ir
+ */
+
+	echo $this->getMethod()->getTitle() . '<br/>';
+	if ($this->getInfo()->getLastTransId() == '') {
+		echo $this->__('Payment has not been processed yet.') . '<br/>';
+	} else {
+		echo $this->__('En Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
+	}
+?>
